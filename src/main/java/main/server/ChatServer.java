@@ -56,7 +56,6 @@ class ChatServer {
     }
 
     private String createDate(){
-        String str;
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         return "["+dateFormat.format(date)+"]:";
