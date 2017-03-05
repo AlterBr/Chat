@@ -2,6 +2,7 @@ package main.server;
 
 import java.io.*;
 import java.net.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 class ChatServer {
@@ -54,11 +55,18 @@ class ChatServer {
         }
     }
 
+    private String createDate(){
+        String str;
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        return "["+dateFormat.format(date)+"]:";
+    }
+
     private void tellEveryoneInRoom(String message, String toRoom, boolean systemMessage) {
         for (ClientHandler clientHandler : clientHandlerArrayList) {
             if (toRoom.equals(clientHandler.getCurrentRoom())) {
                 try {
-                    clientHandler.getWriterClient().println(message);
+                    clientHandler.getWriterClient().println(createDate() + message);
                     clientHandler.getWriterClient().flush();
                 } catch (Exception ex) {
                     ex.printStackTrace();
