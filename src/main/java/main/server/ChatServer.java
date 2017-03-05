@@ -4,14 +4,14 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-class VerySimpleChatServer {
+class ChatServer {
     private ArrayList<ClientHandler> clientHandlerArrayList;
     private boolean notClose = true;
     private ListOfUserInRoom[] listOfRoomWithUser = new ListOfUserInRoom[3];
     private History history;
 
     public static void main(String[] args) {
-        new VerySimpleChatServer().go();
+        new ChatServer().go();
     }
 
     private void go() {

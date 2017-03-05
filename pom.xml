@@ -24,7 +24,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>main.server.VerySimpleChatServer</mainClass>
+                            <mainClass>main.server.ChatServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

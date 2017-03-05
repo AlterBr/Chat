@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
-class SimpleChatClient {
+class ChatClient {
     private JTextArea incoming;
     private JTextField outgoing;
     private JLabel nameLabel;
@@ -33,7 +33,7 @@ class SimpleChatClient {
     private Set<String> listOfUsers = new HashSet<>();
 
     public static void main(String[] args) {
-        new SimpleChatClient().go();
+        new ChatClient().go();
     }
 
     private void go() {
