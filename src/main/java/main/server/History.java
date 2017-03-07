@@ -9,6 +9,20 @@ class History implements Serializable {
         history = new String[sizeOfArray];
     }
 
+    void addToHistory(String str){
+        if (history[history.length-1] != null){
+            System.arraycopy(history, 1, history, 0, history.length - 1);
+            history[history.length-1] = str;
+        }else {
+            for (int i = 0; i < history.length; i++) {
+                if (history[i] == null) {
+                    history [i] = str;
+                    break;
+                }
+            }
+        }
+    }
+
     String[] getHistory() {
         return history;
     }
@@ -20,21 +34,5 @@ class History implements Serializable {
             string += aHistory + " ";
         }
         return string;
-    }
-
-    void addToHistory(String str){
-        if (history[history.length-1] != null){
-            for (int i = 0; i < history.length-1; i++) {
-                history[i] = history[i+1];
-            }
-            history[history.length-1] = str;
-        }else {
-            for (int i = 0; i < history.length; i++) {
-                if (history[i] == null) {
-                    history [i] = str;
-                    break;
-                }
-            }
-        }
     }
 }
